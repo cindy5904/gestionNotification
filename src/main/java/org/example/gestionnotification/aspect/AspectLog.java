@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import java.util.Arrays;
 
 public class AspectLog {
-    @Pointcut("@annotation(org.example.gestionnotification.annotation)")
+    @Pointcut("@annotation(org.example.gestionnotification.annotation.AnnotationLog)")
     public void logPointCut() {
 
     }

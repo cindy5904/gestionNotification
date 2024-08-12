@@ -2,7 +2,7 @@ package org.example.gestionnotification.entity;
 
 import jakarta.persistence.*;
 
-
+@Entity
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

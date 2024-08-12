@@ -1,5 +1,7 @@
 package org.example.gestionnotification.service;
 
+import org.example.gestionnotification.annotation.AnnotationLog;
+import org.example.gestionnotification.annotation.AnnotationPerformance;
 import org.example.gestionnotification.entity.Task;
 import org.example.gestionnotification.repository.TaskRepository;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,8 @@ public class Taskservice {
     }
     private List<Task> tasks = new ArrayList<>();
 
+    @AnnotationPerformance
+    @AnnotationLog
     public Task createTask(String name, String status) {
         Task task = new Task();
         task.setName(name);
@@ -25,10 +29,14 @@ public class Taskservice {
         return taskRepository.save(task);
     }
 
+    @AnnotationPerformance
+    @AnnotationLog
     public List<Task> findAll() {
         return (List<Task>) taskRepository.findAll();
     }
 
+    @AnnotationPerformance
+    @AnnotationLog
     public Task findById(int id) {
         Optional<Task> taskOptional = taskRepository.findById(id);
         if(taskOptional.isPresent()) {
